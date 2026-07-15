@@ -1,6 +1,11 @@
-# Use a lightweight Linux base image
-FROM alpine:latest
-# Copy the distribution files created in Step 5 into the container
+# Use an official, lightweight Python runtime as a parent image
+FROM python:3.11-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the distribution files created in the Build stage into the container
 COPY dist/app /app
-# Keep the container running or specify a startup command
-CMD ["echo", "Music App Container Active"]
+
+# The command that runs when the container starts up
+CMD ["python3", "-c", "print('Music App Container Active and Running Python!')"]
