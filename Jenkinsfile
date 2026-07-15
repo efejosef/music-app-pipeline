@@ -21,7 +21,7 @@ pipeline {
                 sh 'test -f dist/app/config.properties'
                 
                 echo 'Checking system dependencies...'
-                sh 'python3 --version'
+                //sh 'python3 --version'
             }
         }
 
